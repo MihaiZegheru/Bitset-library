@@ -1,0 +1,20 @@
+#ifndef BITSET_H__
+#define BITSET_H__
+
+#include <stddef.h>
+#include <stdint.h>
+
+typedef struct {
+    uint8_t *bytes;
+    size_t size;
+} bitset_t;
+
+bitset_t bitset_new(size_t size);
+void bitset_delete(bitset_t bitset);
+
+uint8_t bitset_get(size_t i, bitset_t bitset);
+void bitset_set(size_t i, bitset_t bitset);
+void bitset_reset(size_t i, bitset_t bitset);
+void bitset_toggle(size_t i, bitset_t bitset);
+
+#endif // BITSET_H__
