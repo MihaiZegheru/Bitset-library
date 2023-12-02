@@ -1,8 +1,23 @@
+/*
+ *   Copyright (c) 2023 Mihai Zegheru
+ *   All rights reserved.
+ */
+
 #ifndef BITSET_H__
 #define BITSET_H__
 
 #include <stddef.h>
 #include <stdint.h>
+
+#ifndef BITSET_MALLOC
+#include <stdlib.h>
+#define BITSET_MALLOC malloc
+#endif // BITSET_MALLOC
+
+#ifndef BITSET_FREE
+#include <stdlib.h>
+#define BITSET_FREE free
+#endif // BITSET_FREE
 
 typedef struct {
     uint8_t *bytes;
