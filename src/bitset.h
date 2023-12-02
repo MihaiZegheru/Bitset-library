@@ -1,6 +1,6 @@
 /*
  *   Copyright (c) 2023 Mihai Zegheru
- *   All rights reserved.
+ *   MIT licensed
  */
 
 #ifndef BITSET_H__

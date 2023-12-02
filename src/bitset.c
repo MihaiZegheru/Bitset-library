@@ -1,6 +1,6 @@
 /*
  *   Copyright (c) 2023 Mihai Zegheru
- *   All rights reserved.
+ *   MIT licensed
  */
 
 #include "bitset.h"
