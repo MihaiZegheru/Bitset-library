@@ -19,7 +19,29 @@ void bitset_delete(bitset_t bitset)
     BITSET_FREE(bitset.bytes);
 }
 
-uint8_t bitset_get(size_t i, bitset_t bitset);
-void bitset_set(size_t i, bitset_t bitset);
-void bitset_reset(size_t i, bitset_t bitset);
-void bitset_toggle(size_t i, bitset_t bitset);
+uint8_t bitset_get(size_t i, bitset_t bitset)
+{
+    return (bitset.bytes[BITSET_GET_CELL(i, bitset)] >>
+            BITSET_GET_OFFSET(i, bitset)) & 1;
+}
+
+void bitset_set(size_t i, bitset_t bitset)
+{
+    bitset.bytes[BITSET_GET_CELL(i, bitset)] = 
+            bitset.bytes[BITSET_GET_CELL(i, bitset)] | 
+            (1 << BITSET_GET_OFFSET(i, bitset)); 
+}
+
+void bitset_reset(size_t i, bitset_t bitset)
+{
+    bitset.bytes[BITSET_GET_CELL(i, bitset)] = 
+            bitset.bytes[BITSET_GET_CELL(i, bitset)] &
+            ~(1 << BITSET_GET_OFFSET(i, bitset)); 
+}
+
+void bitset_toggle(size_t i, bitset_t bitset)
+{
+    bitset.bytes[BITSET_GET_CELL(i, bitset)] = 
+            bitset.bytes[BITSET_GET_CELL(i, bitset)] ^
+            (1 << BITSET_GET_OFFSET(i, bitset)); 
+}

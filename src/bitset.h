@@ -19,6 +19,9 @@
 #define BITSET_FREE free
 #endif // BITSET_FREE
 
+#define BITSET_GET_CELL(i, bitset) (i) / sizeof(*(bitset).bytes)
+#define BITSET_GET_OFFSET(i, bitset) (i) % sizeof(*(bitset).bytes)
+
 typedef struct {
     uint8_t *bytes;
     size_t size;
