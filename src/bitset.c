@@ -3,7 +3,7 @@
  *   MIT licensed
  */
 
-#include "bitset.h"
+#include "../include/bitset.h"
 
 bitset_t bitset_new(size_t size)
 {
